@@ -81,7 +81,7 @@ public class ChipPackage : MonoBehaviour {
 	}
 
 	public void SetSizeAndSpacing (Chip chip) {
-		nameText.fontSize = 2.5f;
+		nameText.fontSize = 1.5f;
 
 		float containerHeightPadding = 0;
 		float containerWidthPadding = 0.1f;

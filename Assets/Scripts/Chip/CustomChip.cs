@@ -24,5 +24,4 @@ public class CustomChip : Chip {
 			outputPins[i].ReceiveSignal (outputState);
 		}
 	}
-
 }

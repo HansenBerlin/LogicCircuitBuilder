@@ -51,7 +51,8 @@ public class DecimalDisplay : MonoBehaviour {
 		public TMP_Text text;
 
 		public void UpdateDisplay (ChipInterfaceEditor editor) {
-			if (editor.selectedSignals.Contains (signals[0])) {
+			if (editor.selectedSignals.Contains (signals[0])) 
+			{
 				text.gameObject.SetActive (false);
 			} else {
 				text.gameObject.SetActive (true);

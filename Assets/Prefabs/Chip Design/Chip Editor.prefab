@@ -824,7 +824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2518761413890154588
 Transform:
   m_ObjectHideFlags: 0
@@ -1201,6 +1201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75d9bedf3df7e422eb308f6d36a2c0e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scriptsContainer: {fileID: 0}
   editorType: 0
   chipContainer: {fileID: 4750937599942273985}
   signalPrefab: {fileID: 4370981688201696047, guid: fecc938b0c660450ba39ad175f13ffc0,
@@ -1210,7 +1211,7 @@ MonoBehaviour:
   deleteButton: {fileID: 3401836960351895843}
   twosComplementToggle: {fileID: 256749248}
   signalHolder: {fileID: 4750937600123747354}
-  handleSize: {x: 0.15, y: 0.2}
+  handleSize: {x: 0.1, y: 0.2}
   handleCol: {r: 0.22745098, g: 0.22745098, b: 0.22745098, a: 0}
   highlightedHandleCol: {r: 0.496, g: 0.496, b: 0.496, a: 0}
   selectedHandleCol: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 0}
@@ -1436,6 +1437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4750937600005748786}
+  - component: {fileID: 6165415596277982414}
   m_Layer: 0
   m_Name: Chips
   m_TagString: Untagged
@@ -1457,6 +1459,19 @@ Transform:
   m_Father: {fileID: 4750937600419506468}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6165415596277982414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4750937600005748789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c4b897e2f64887449f198793d5570b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: 0
 --- !u!1 &4750937600015594409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,6 +1631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75d9bedf3df7e422eb308f6d36a2c0e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scriptsContainer: {fileID: 0}
   editorType: 1
   chipContainer: {fileID: 4750937599942273985}
   signalPrefab: {fileID: 894826051406503273, guid: 808e12d27921848a59bac447b93aec0f,
@@ -1625,14 +1641,14 @@ MonoBehaviour:
   deleteButton: {fileID: 3401836960351895843}
   twosComplementToggle: {fileID: 256749248}
   signalHolder: {fileID: 4750937600234680856}
-  handleSize: {x: 0.15, y: 0.4}
+  handleSize: {x: 0.1, y: 0.2}
   handleCol: {r: 0.22745098, g: 0.22745098, b: 0.22745098, a: 0}
   highlightedHandleCol: {r: 0.496, g: 0.496, b: 0.496, a: 0}
   selectedHandleCol: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 0}
   propertiesUIX: -1.6
   propertiesHeightMinMax: {x: 69, y: 104}
   showPreviewSignal: 1
-  groupSpacing: 0.22
+  groupSpacing: 0.11
   currentGroupSize: 1
   currentGroupID: 0
 --- !u!114 &2647783974511930239
@@ -1718,6 +1734,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4750937600480304329}
+  - component: {fileID: 6500563439308851071}
   m_Layer: 0
   m_Name: Wires
   m_TagString: Untagged
@@ -1739,6 +1756,19 @@ Transform:
   m_Father: {fileID: 4750937600419506468}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6500563439308851071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4750937600480304328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c4b897e2f64887449f198793d5570b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: 0
 --- !u!1 &5625433789866619685
 GameObject:
   m_ObjectHideFlags: 0

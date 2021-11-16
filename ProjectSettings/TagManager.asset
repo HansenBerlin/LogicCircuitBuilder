@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ChipEditor
   - Tests
+  - CountPart
   layers:
   - Default
   - TransparentFX

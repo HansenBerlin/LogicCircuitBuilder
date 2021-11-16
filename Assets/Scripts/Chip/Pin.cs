@@ -27,7 +27,7 @@ public class Pin : MonoBehaviour {
 
 	public static float radius {
 		get {
-			float diameter = 0.215f;
+			float diameter = 0.1f;
 			return diameter / 2;
 		}
 	}

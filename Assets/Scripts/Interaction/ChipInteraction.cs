@@ -285,12 +285,9 @@ public class ChipInteraction : InteractionHandler {
 		chip.transform.position = new Vector3 (chip.transform.position.x, chip.transform.position.y, depth);
 	}
 
-	protected override bool CanReleaseFocus () {
-		if (currentState == State.PlacingNewChips || currentState == State.MovingOldChips) {
-
-			return false;
-		}
-		return true;
+	protected override bool CanReleaseFocus ()
+	{
+		return currentState != State.PlacingNewChips && currentState != State.MovingOldChips;
 	}
 
 	protected override void FocusLost () {

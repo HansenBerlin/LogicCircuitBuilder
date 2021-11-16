@@ -20,12 +20,32 @@ PrefabInstance:
     - target: {fileID: 322412531872686230, guid: b19a100a3d81b4c6e9a0c3c1362706c3,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.61184
+      value: 0.4804596
       objectReference: {fileID: 0}
     - target: {fileID: 768468710238907868, guid: b19a100a3d81b4c6e9a0c3c1362706c3,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 866551715762075300, guid: b19a100a3d81b4c6e9a0c3c1362706c3,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.1213622
+      objectReference: {fileID: 0}
+    - target: {fileID: 866551715762075300, guid: b19a100a3d81b4c6e9a0c3c1362706c3,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.7149304
+      objectReference: {fileID: 0}
+    - target: {fileID: 866551715762075300, guid: b19a100a3d81b4c6e9a0c3c1362706c3,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.00521636
+      objectReference: {fileID: 0}
+    - target: {fileID: 866551715762075300, guid: b19a100a3d81b4c6e9a0c3c1362706c3,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0075199753
       objectReference: {fileID: 0}
     - target: {fileID: 1079171014806828567, guid: b19a100a3d81b4c6e9a0c3c1362706c3,
         type: 3}
@@ -76,6 +96,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: CLOCK
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886115464730570716, guid: b19a100a3d81b4c6e9a0c3c1362706c3,
+        type: 3}
+      propertyPath: m_margin.x
+      value: -0.2710889
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886115464730570716, guid: b19a100a3d81b4c6e9a0c3c1362706c3,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -0.26097113
       objectReference: {fileID: 0}
     - target: {fileID: 3915399084316275169, guid: b19a100a3d81b4c6e9a0c3c1362706c3,
         type: 3}
