@@ -13,7 +13,6 @@ public class ChipInterfaceEditor : InteractionHandler {
 	public enum EditorType { Input, Output }
 	public enum HandleState { Default, Highlighted, Selected }
 	const float forwardDepth = -0.1f;
-	public FindGameObjects scriptsContainer;
 
 
 	public List<ChipSignal> signals { get; private set; }
@@ -378,7 +377,8 @@ public class ChipInterfaceEditor : InteractionHandler {
 
 	}
 
-	void DeleteSelected () {
+	void DeleteSelected () 
+	{
 		for (int i = selectedSignals.Count - 1; i >= 0; i--) {
 			ChipSignal signalToDelete = selectedSignals[i];
 			if (groupsByID.ContainsKey (signalToDelete.GroupID)) {
@@ -391,8 +391,6 @@ public class ChipInterfaceEditor : InteractionHandler {
 		onChipsAddedOrDeleted?.Invoke ();
 		selectedSignals.Clear ();
 		FocusLost ();
-		scriptsContainer.chipCounter.CountParts();
-		scriptsContainer.wireCounter.CountParts();
 	}
 
 	void DrawHandle (float y, HandleState handleState = HandleState.Default) {

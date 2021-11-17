@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using UI;
 using UnityEngine;
 
 public class ChipInteraction : InteractionHandler {
@@ -14,11 +16,13 @@ public class ChipInteraction : InteractionHandler {
 	public float selectionBoundsBorderPadding = 0.1f;
 	public Color selectionBoxCol;
 	public Color invalidPlacementCol;
+	public PartsCounter counter;
 
 	const float dragDepth = -50;
 	const float chipDepth = -0.2f;
 
 	public List<Chip> allChips { get; private set; }
+	public List<Chip> allChipsTemp { get; private set; }
 
 	State currentState;
 	List<Chip> newChipsToPlace;
@@ -31,18 +35,23 @@ public class ChipInteraction : InteractionHandler {
 		newChipsToPlace = new List<Chip> ();
 		selectedChips = new List<Chip> ();
 		allChips = new List<Chip> ();
+		allChipsTemp = new List<Chip>();
+
 		MeshShapeCreator.CreateQuadMesh (ref selectionMesh);
 	}
 
-	public override void OrderedUpdate () {
-
-		switch (currentState) {
+	public override void OrderedUpdate () 
+	{
+		switch (currentState) 
+		{
 			case State.None:
 				HandleSelection ();
 				HandleDeletion ();
+				//UpdateCounts();
 				break;
 			case State.PlacingNewChips:
 				HandleNewChipPlacement ();
+				//UpdateCounts();
 				break;
 			case State.SelectingChips:
 				HandleSelectionBox ();
@@ -51,7 +60,7 @@ public class ChipInteraction : InteractionHandler {
 				HandleChipMovement ();
 				break;
 		}
-		DrawSelectedChipBounds ();
+		DrawSelectedChipBounds (); 
 	}
 
 	public void LoadChip (Chip chip) {
@@ -120,7 +129,7 @@ public class ChipInteraction : InteractionHandler {
 			}
 			newChipsToPlace.Clear ();
 		}
-
+		//UpdateCounts();
 	}
 
 	void DeleteChip (Chip chip) {
@@ -234,6 +243,7 @@ public class ChipInteraction : InteractionHandler {
 		selectedChips.Clear ();
 		newChipsToPlace.Clear ();
 		currentState = State.None;
+		//UpdateCounts();
 	}
 
 	void CancelPlacement () {
@@ -285,14 +295,31 @@ public class ChipInteraction : InteractionHandler {
 		chip.transform.position = new Vector3 (chip.transform.position.x, chip.transform.position.y, depth);
 	}
 
-	protected override bool CanReleaseFocus ()
+	protected override bool CanReleaseFocus()
 	{
 		return currentState != State.PlacingNewChips && currentState != State.MovingOldChips;
 	}
 
-	protected override void FocusLost () {
+	protected override void FocusLost () 
+	{
 		currentState = State.None;
 		selectedChips.Clear ();
 	}
 
+	private void Update()
+	{
+		UpdateCounts();
+	}
+
+	private int countTest = 0;
+	private void UpdateCounts()
+	{
+		if (allChips.Count != countTest)
+		{
+			Debug.Log("All chips: " + allChips.Count);
+			Debug.Log("All chips temp: " + countTest);
+			counter.CountParts();
+			countTest = allChips.Count;
+		}
+	}
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Threading.Tasks;
 
@@ -15,14 +16,25 @@ public class HalfAdderSimple : MonoBehaviour
 
     void Start()
     {
+        
+    }
+
+    private void Update()
+    {
+        if (signalSpawner == null)
+            signalSpawner = FindObjectOfType<SignalSpawner>();
+
+        if (signalSpawner == null)
+            return;
+        
         signalOne = signalSpawner.CreateInputSignal(-2f);
         signalTwo = signalSpawner.CreateInputSignal(2f);
         signalZeroOut = signalSpawner.CreateOutputSignal(-2f);
         signalOneOut = signalSpawner.CreateOutputSignal(2f);
-        signalZeroOut.UpdateSignalName("Z1(OUT)");
-        signalOneOut.UpdateSignalName("Z2(OUT)");
-        signalOne.UpdateSignalName("A1(IN)");
-        signalTwo.UpdateSignalName("B1(IN)");
+        signalZeroOut.UpdateSignalName("SUM");
+        signalOneOut.UpdateSignalName("CARRY");
+        signalOne.UpdateSignalName("A0");
+        signalTwo.UpdateSignalName("B0");
     }
 
     public async Task<int> StartTest(int one, int two, int oneAssert, int twoAssert, int testCase)

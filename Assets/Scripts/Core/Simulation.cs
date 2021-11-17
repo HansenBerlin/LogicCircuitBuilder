@@ -7,7 +7,7 @@ public class Simulation : MonoBehaviour {
 
 	static Simulation instance;
 	InputSignal[] inputSignals;
-	ChipEditor chipEditor;
+	public ChipEditor chipEditor;
 
 	public float minStepTime = 0.075f;
 	float lastStepTime;

@@ -1,31 +1,48 @@
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class PartsCounter : MonoBehaviour
+namespace UI
 {
-    public int count;
-
-    public void CountParts()
+    public class PartsCounter : MonoBehaviour
     {
-        Debug.Log("Count");
-        foreach(Transform child in transform)
+        public int count;
+        public string searchTag = "CountPart";
+
+        void Start()
+        {
+            if (searchTag != null)
+            {
+                FindObjectwithTag(searchTag);
+            }
+        }
+
+        public void CountParts()
+        {
+            FindObjectwithTag(searchTag);
+        }
+ 
+        public void FindObjectwithTag(string _tag)
         {
             count = 0;
-            if (child.tag == "CountPart")
-                count++;
+            Transform parent = transform;
+            GetChildObject(parent, _tag);
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+ 
+        public void GetChildObject(Transform parent, string _tag)
+        {
+            for (int i = 0; i < parent.childCount; i++)
+            {
+                Transform child = parent.GetChild(i);
+                if (child.tag == _tag)
+                {
+                    count++;
+                    Debug.Log("added, now is: " + count);
+                }
+                if (child.childCount > 0)
+                {
+                    GetChildObject(child, _tag);
+                }
+            }
+        }
     }
 }

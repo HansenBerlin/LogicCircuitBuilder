@@ -816,7 +816,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2518761413890154588}
-  - component: {fileID: 6449634384898800140}
   - component: {fileID: 3097898735493498815}
   m_Layer: 0
   m_Name: Tests
@@ -839,23 +838,6 @@ Transform:
   m_Father: {fileID: 4750937599765430253}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6449634384898800140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4119268163542228766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fdb78e1406c5e74d984f133b751af4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  signalOne: {fileID: 0}
-  signalTwo: {fileID: 0}
-  signalZeroOut: {fileID: 0}
-  signalOneOut: {fileID: 0}
-  signalSpawner: {fileID: 3097898735493498815}
 --- !u!114 &3097898735493498815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1058,6 +1040,7 @@ MonoBehaviour:
   selectionBoundsBorderPadding: 0.25
   selectionBoxCol: {r: 1, g: 1, b: 1, a: 0.101960786}
   invalidPlacementCol: {r: 0.990566, g: 0.35978103, b: 0.35978103, a: 0.29803923}
+  counter: {fileID: 6455531887580797422}
 --- !u!1 &4750937598611645874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,7 +1184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75d9bedf3df7e422eb308f6d36a2c0e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptsContainer: {fileID: 0}
   editorType: 0
   chipContainer: {fileID: 4750937599942273985}
   signalPrefab: {fileID: 4370981688201696047, guid: fecc938b0c660450ba39ad175f13ffc0,
@@ -1437,7 +1419,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4750937600005748786}
-  - component: {fileID: 6165415596277982414}
   m_Layer: 0
   m_Name: Chips
   m_TagString: Untagged
@@ -1459,19 +1440,6 @@ Transform:
   m_Father: {fileID: 4750937600419506468}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6165415596277982414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4750937600005748789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c4b897e2f64887449f198793d5570b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  count: 0
 --- !u!1 &4750937600015594409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,7 +1599,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75d9bedf3df7e422eb308f6d36a2c0e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptsContainer: {fileID: 0}
   editorType: 1
   chipContainer: {fileID: 4750937599942273985}
   signalPrefab: {fileID: 894826051406503273, guid: 808e12d27921848a59bac447b93aec0f,
@@ -1700,6 +1667,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4750937600419506468}
+  - component: {fileID: 6455531887580797422}
   m_Layer: 0
   m_Name: Implementation Holder
   m_TagString: Untagged
@@ -1725,6 +1693,20 @@ Transform:
   m_Father: {fileID: 4750937599765430253}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6455531887580797422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4750937600419506471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c4b897e2f64887449f198793d5570b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: 0
+  searchTag: CountPart
 --- !u!1 &4750937600480304328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,7 +1716,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4750937600480304329}
-  - component: {fileID: 6500563439308851071}
   m_Layer: 0
   m_Name: Wires
   m_TagString: Untagged
@@ -1756,19 +1737,6 @@ Transform:
   m_Father: {fileID: 4750937600419506468}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6500563439308851071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4750937600480304328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c4b897e2f64887449f198793d5570b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  count: 0
 --- !u!1 &5625433789866619685
 GameObject:
   m_ObjectHideFlags: 0
